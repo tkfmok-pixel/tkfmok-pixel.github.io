@@ -7,16 +7,10 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
   return (
-  const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
-  const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
-  const baseDir = pathToRoot(fileData.slug!)
-  return (
     <h2 class={classNames(displayClass, "page-title")}>
-      {/* ↓ ここを書き換えました */}
-      <a href={baseDir} dangerouslySetInnerHTML={{ __html: title }}></a>
+      <a href={baseDir}>{title}</a>
     </h2>
   )
-}
 }
 
 PageTitle.css = `
