@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "StrayOjisanの日々",
+    pageTitle: `<img src="static/icon.png" alt="StrayOjisanの日々" style="height: 1.8em; vertical-align: middle; margin-right: 10px;"> StrayOjisanの日々`,
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
