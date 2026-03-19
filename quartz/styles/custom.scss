@@ -157,27 +157,7 @@ body {
   transform: rotate(0deg) scale(1.03);
 }
 
-/* 上部固定バナー画像 ---------------------------------------------- */
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 180px;
-  background-image: url("https://i.gyazo.com/bf1bf297bb65aff9d684e45c5f489210.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* バナーの下に本文が来るように余白調整 */
-.page > #quartz-body > .center {
-  padding-top: 220px;
-}
+/* 上部固定バナー画像は使用しない（余白のみベースレイアウトに任せる） */
 
 /* モバイル最適化 -------------------------------------------------- */
 
@@ -196,8 +176,6 @@ body::before {
     margin: 20px auto !important;
   }
 
-  .page > #quartz-body > .center {
-    padding-top: 200px;
-  }
+  /* 追加の上部余白は不要 */
 }
 
