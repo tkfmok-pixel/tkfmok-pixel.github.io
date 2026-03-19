@@ -66,8 +66,13 @@ body {
   padding: 40px 12% 80px 12%;
   max-width: 900px;
   margin: 40px auto 80px auto;
-  line-height: 2;
+  line-height: 1.9;
   overflow-x: hidden;
+}
+
+/* 段落間の余白を少し広げて読みやすくする */
+.page > #quartz-body > .center > article p + p {
+  margin-top: 0.8em;
 }
 
 /* hr とフッターもカード幅に揃えて中央寄せ */
