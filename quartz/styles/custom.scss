@@ -30,7 +30,7 @@
   --cardy-bg-editor: #0f0f0f;
   --cardy-bg-line: #1e1e1e;
   --cardy-line-border: #333333;
-  --cardy-preview-bg: #1c1c1c;
+  --cardy-preview-bg: #262626;
   --cardy-h1-color: #b1a7c7;
   --cardy-h1-bg: #3e3a49;
   --cardy-h2-color: #8fb1e0;
@@ -60,8 +60,8 @@ body {
 .page > #quartz-body > .center > article {
   background-color: var(--cardy-preview-bg);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.1),
-    0 30px 60px rgba(0, 0, 0, 0.1);
+    0 14px 36px rgba(0, 0, 0, 0.18),
+    0 36px 72px rgba(0, 0, 0, 0.14);
   border-radius: 12px;
   padding: 40px 12% 80px 12%;
   max-width: 900px;
@@ -90,8 +90,20 @@ body {
 .page > #quartz-body > .center > article h3 {
   text-align: center;
   border: none;
-  margin-top: 2.5em;
-  margin-bottom: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1.1em;
+  position: relative;
+}
+
+/* Quartz の見出しアンカーが非表示でも幅を取ってしまうのを防ぐ */
+.page > #quartz-body > .center > article h1[id] > a[href^="#"],
+.page > #quartz-body > .center > article h2[id] > a[href^="#"],
+.page > #quartz-body > .center > article h3[id] > a[href^="#"] {
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
 }
 
 .page > #quartz-body > .center > article h1:first-of-type {
@@ -99,45 +111,46 @@ body {
 }
 
 .page > #quartz-body > .center > article h1 {
-  font-size: 2.5em;
+  font-size: 1.75em;
   color: var(--cardy-h1-color);
   position: relative;
-  padding-bottom: 0.8em;
+  padding: 0.25em 0 0.55em;
   background-color: var(--cardy-h1-bg);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .page > #quartz-body > .center > article h1::after {
   content: "◈";
   display: block;
-  font-size: 0.5em;
+  font-size: 0.42em;
   color: var(--cardy-accent-edit);
-  margin-top: 10px;
+  margin-top: 6px;
   background: linear-gradient(to right, transparent, var(--cardy-h1-color), transparent);
-  background-size: 60% 1px;
+  background-size: 52% 1px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .page > #quartz-body > .center > article h2 {
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: var(--cardy-h2-color);
   display: table;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 40px 10px 40px;
-  border-bottom: 1px solid var(--cardy-h2-bg);
+  padding: 0 28px 7px 28px;
+  border-bottom: 0.5px solid color-mix(in srgb, var(--cardy-h2-color) 28%, transparent);
   background-color: var(--cardy-h2-bg);
-  border-radius: 999px;
+  border-radius: 14px;
 }
 
 .page > #quartz-body > .center > article h3 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: var(--cardy-h3-color);
   display: inline-block;
-  padding: 6px 20px;
+  padding: 4px 14px;
   background-color: var(--cardy-h3-bg);
-  border-radius: 999px;
+  border: 0.5px solid color-mix(in srgb, var(--cardy-h3-color) 28%, transparent);
+  border-radius: 12px;
   margin-left: auto;
   margin-right: auto;
 }
