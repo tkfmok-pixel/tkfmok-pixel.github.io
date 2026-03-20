@@ -28,7 +28,7 @@ Gemがシステムプロンプトで指示しておいた項目を聞き終え�
 # 🤖 Gemini x Obsidian 自動化プロジェクト・コンプリートガイド
 
 ## 📋 実施タスクリスト
-- [ ] **1. Google AI StudioでAPIキーを取得**
+- [x] **1. Google AI StudioでAPIキーを取得** ✅ 2026-03-20
 	- [Google AI Studio](https://aistudio.google.com/) にアクセスし、「Get API key」からキーを生成してメモする。
 - [ ] **2. Python環境の準備 (Mac)**
     - ターミナルで以下を実行：

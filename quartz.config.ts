@@ -16,8 +16,8 @@ const config: QuartzConfig = {
       provider: "google",
       tagId: "G-VJX1FP3WNH",
     },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    locale: "ja-JP",
+    baseUrl: "tkfmok-pixel.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
