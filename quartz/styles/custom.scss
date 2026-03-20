@@ -197,3 +197,59 @@ body {
   /* 追加の上部余白は不要 */
 }
 
+/* =================================================================
+   左サイドバー（ノート一覧）を読みやすくする
+   ================================================================= */
+
+.page .sidebar.left .explorer-content ul li > a,
+.page .sidebar.left .recent-notes ul.recent-ul li .section .desc h3 a.internal {
+  opacity: 0.98;
+  color: var(--dark);
+  display: block;
+  padding: 0.35rem 0.55rem;
+  border-radius: 10px;
+  line-height: 1.35;
+  font-size: 0.98rem;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.page .sidebar.left .explorer-content ul li > a:hover,
+.page .sidebar.left .recent-notes ul.recent-ul li .section .desc h3 a.internal:hover {
+  background-color: color-mix(in srgb, var(--highlight) 70%, transparent);
+}
+
+.page .sidebar.left .explorer-content ul li > a.active {
+  opacity: 1;
+  color: var(--tertiary);
+  background-color: color-mix(in srgb, var(--tertiary) 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tertiary) 40%, transparent);
+}
+
+.page .sidebar.left .recent-notes > h3 {
+  font-size: 0.98rem;
+  margin: 0.6rem 0 0 0;
+}
+
+.page .sidebar.left .recent-notes ul.recent-ul {
+  margin-top: 0.6rem;
+}
+
+.page .sidebar.left .recent-notes ul.recent-ul > li {
+  margin: 0.75rem 0;
+}
+
+.page .sidebar.left .recent-notes .section > .meta {
+  opacity: 0.85;
+  margin: 0 0 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.page .sidebar.left .recent-notes .tags a.internal {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  opacity: 0.95;
+  font-size: 0.82rem;
+}
+
+
