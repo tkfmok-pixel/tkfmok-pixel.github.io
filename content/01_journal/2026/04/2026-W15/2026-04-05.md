@@ -1,0 +1,23 @@
+---
+tags:
+  - dailyjournal
+journal:
+mood:
+weather:
+EarlyUp:
+study:
+exercise:
+newspaper:
+Egg:
+SleepFrom:
+SleepTo:
+SleepScore:
+weight:
+FatRate:
+Calorie:
+WorkTime:
+ExerciseTime:
+RunningDistance:
+Steps:
+StudyTime:
+---

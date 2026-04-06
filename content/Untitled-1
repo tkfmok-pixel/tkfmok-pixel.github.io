@@ -1,0 +1,39 @@
+function addMonthRowIfNeeded() {
+  const ss = SpreadsheetApp.getActive();
+  const sheet = ss.getSheetByName('Buko');
+
+  const today = new Date();
+
+  // 21日以外は何もしない
+  if (today.getDate() !== 21) return;
+
+  // ★ タイムゾーンを考慮して明示的に生成
+  const year = today.getFullYear();
+  const monthIndex = today.getMonth(); // 0始まり
+
+  const monthStart = new Date(year, monthIndex, 21);
+  monthStart.setHours(0, 0, 0, 0);
+
+  const values = sheet.getDataRange().getValues();
+
+  // ★ 数値比較で重複チェック（Date判定はしない）
+  const monthStartTime = monthStart.getTime();
+
+  const exists = values.some((row, i) => {
+    if (i === 0) return false; // ヘッダ除外
+    if (!row[0]) return false;
+
+    const t = new Date(row[0]).getTime();
+    return t === monthStartTime;
+  });
+
+  if (exists) return;
+
+  sheet.appendRow([
+    monthStart,
+    false
+  ]);
+}
+
+
+

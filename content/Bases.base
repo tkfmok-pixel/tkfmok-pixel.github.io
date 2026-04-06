@@ -1,0 +1,26 @@
+formulas:
+  Imaage: image(image)
+  created: date(created)
+  Untitled: ""
+views:
+  - type: table
+    name: Table
+    order:
+      - file.ctime
+      - formula.Imaage
+      - file.name
+      - description
+    sort:
+      - property: file.ctime
+        direction: DESC
+      - property: description
+        direction: ASC
+      - property: formula.Untitled
+        direction: ASC
+      - property: formula.Imaage
+        direction: ASC
+    columnSize:
+      file.ctime: 195
+      formula.Imaage: 121
+      file.name: 491
+    rowHeight: medium

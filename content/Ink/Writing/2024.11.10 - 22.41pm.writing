@@ -1,0 +1,238 @@
+{
+	"meta": {
+		"pluginVersion": "0.2.6",
+		"tldrawVersion": "2.1.0"
+	},
+	"tldraw": {
+		"store": {
+			"document:document": {
+				"gridSize": 10,
+				"name": "",
+				"meta": {},
+				"id": "document:document",
+				"typeName": "document"
+			},
+			"page:3qj9EtNgqSCW_6knX2K9_": {
+				"meta": {},
+				"id": "page:3qj9EtNgqSCW_6knX2K9_",
+				"name": "Handwritten Note",
+				"index": "a1",
+				"typeName": "page"
+			},
+			"shape:writing-lines": {
+				"x": 0,
+				"y": 0,
+				"rotation": 0,
+				"isLocked": true,
+				"opacity": 1,
+				"meta": {
+					"savedH": 375
+				},
+				"type": "writing-lines",
+				"parentId": "page:3qj9EtNgqSCW_6knX2K9_",
+				"index": "a1",
+				"props": {
+					"x": 0,
+					"y": 0,
+					"w": 2000,
+					"h": 375
+				},
+				"id": "shape:writing-lines",
+				"typeName": "shape"
+			},
+			"shape:writing-container": {
+				"x": 0,
+				"y": 0,
+				"rotation": 0,
+				"isLocked": true,
+				"opacity": 1,
+				"meta": {
+					"savedH": 375
+				},
+				"type": "writing-container",
+				"parentId": "page:3qj9EtNgqSCW_6knX2K9_",
+				"index": "a1",
+				"props": {
+					"x": 0,
+					"y": 0,
+					"w": 2000,
+					"h": 375
+				},
+				"id": "shape:writing-container",
+				"typeName": "shape"
+			},
+			"shape:BTNuaiDEMerw3FVRg2r8X": {
+				"x": 1338.2045929018789,
+				"y": 123.17327766179541,
+				"rotation": 0,
+				"isLocked": false,
+				"opacity": 1,
+				"meta": {},
+				"id": "shape:BTNuaiDEMerw3FVRg2r8X",
+				"type": "draw",
+				"props": {
+					"segments": [
+						{
+							"type": "free",
+							"points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0.5
+								}
+							]
+						}
+					],
+					"color": "black",
+					"fill": "none",
+					"dash": "draw",
+					"size": "m",
+					"isComplete": true,
+					"isClosed": false,
+					"isPen": false
+				},
+				"parentId": "page:3qj9EtNgqSCW_6knX2K9_",
+				"index": "a2",
+				"typeName": "shape"
+			},
+			"shape:ixm5_oXJcb-o3d1vCzNh4": {
+				"x": 118.99791231732777,
+				"y": 116.91022964509395,
+				"rotation": 0,
+				"isLocked": false,
+				"opacity": 1,
+				"meta": {},
+				"id": "shape:ixm5_oXJcb-o3d1vCzNh4",
+				"type": "draw",
+				"props": {
+					"segments": [
+						{
+							"type": "free",
+							"points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0.1
+								},
+								{
+									"x": -2.09,
+									"y": 0,
+									"z": 0.1
+								},
+								{
+									"x": -4.18,
+									"y": 0,
+									"z": 0.09
+								},
+								{
+									"x": -2.09,
+									"y": 0,
+									"z": 0.16
+								},
+								{
+									"x": 4.18,
+									"y": -4.18,
+									"z": 0.16
+								},
+								{
+									"x": 14.61,
+									"y": -10.44,
+									"z": 0.16
+								},
+								{
+									"x": 29.23,
+									"y": -18.79,
+									"z": 0.16
+								},
+								{
+									"x": 35.49,
+									"y": -20.88,
+									"z": 0.15
+								},
+								{
+									"x": 41.75,
+									"y": -25.05,
+									"z": 0.13
+								},
+								{
+									"x": 45.93,
+									"y": -27.14,
+									"z": 0.1
+								},
+								{
+									"x": 48.02,
+									"y": -29.23,
+									"z": 0.1
+								},
+								{
+									"x": 50.1,
+									"y": -29.23,
+									"z": 0.07
+								},
+								{
+									"x": 48.02,
+									"y": -29.23,
+									"z": 0.01
+								},
+								{
+									"x": 45.93,
+									"y": -27.14,
+									"z": 0
+								},
+								{
+									"x": 39.67,
+									"y": -22.96,
+									"z": 0
+								}
+							]
+						}
+					],
+					"color": "black",
+					"fill": "none",
+					"dash": "draw",
+					"size": "m",
+					"isComplete": true,
+					"isClosed": false,
+					"isPen": true
+				},
+				"parentId": "page:3qj9EtNgqSCW_6knX2K9_",
+				"index": "a3",
+				"typeName": "shape"
+			}
+		},
+		"schema": {
+			"schemaVersion": 2,
+			"sequences": {
+				"com.tldraw.store": 4,
+				"com.tldraw.asset": 1,
+				"com.tldraw.camera": 1,
+				"com.tldraw.document": 2,
+				"com.tldraw.instance": 24,
+				"com.tldraw.instance_page_state": 5,
+				"com.tldraw.page": 1,
+				"com.tldraw.instance_presence": 5,
+				"com.tldraw.pointer": 1,
+				"com.tldraw.shape": 4,
+				"com.tldraw.asset.bookmark": 1,
+				"com.tldraw.asset.image": 3,
+				"com.tldraw.asset.video": 3,
+				"com.tldraw.shape.group": 0,
+				"com.tldraw.shape.text": 1,
+				"com.tldraw.shape.bookmark": 2,
+				"com.tldraw.shape.draw": 1,
+				"com.tldraw.shape.geo": 8,
+				"com.tldraw.shape.note": 6,
+				"com.tldraw.shape.line": 4,
+				"com.tldraw.shape.frame": 0,
+				"com.tldraw.shape.arrow": 3,
+				"com.tldraw.shape.highlight": 0,
+				"com.tldraw.shape.embed": 4,
+				"com.tldraw.shape.image": 3,
+				"com.tldraw.shape.video": 2,
+				"com.tldraw.shape.writing-container": 0,
+				"com.tldraw.shape.writing-lines": 0
+			}
+		}
+	},
+	"previewUri": "<svg xmlns=\"http://www.w3.org/2000/svg\" direction=\"ltr\" width=\"2064\" height=\"289\" viewBox=\"-32 -32 2064 289\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"background-color: transparent;\"><defs/><g transform=\"matrix(1, 0, 0, 1, 0, 0)\" opacity=\"1\"><line x1=\"100\" y1=\"150\" x2=\"1900\" y2=\"150\"/></g><g transform=\"matrix(1, 0, 0, 1, 0, 0)\" opacity=\"1\"><rect width=\"2000\" height=\"225\" opacity=\"0\"/></g><g transform=\"matrix(1, 0, 0, 1, 1338.2046, 123.1733)\" opacity=\"1\"><path d=\"M 0 0 m -3.0259907985107253, 0 a 3.0259907985107253,3.0259907985107253 0 1,1 6.0519815970214506,0 a 3.0259907985107253,3.0259907985107253 0 1,1 -6.0519815970214506,0\" stroke-linecap=\"round\" fill=\"#f2f2f2\"/></g><g transform=\"matrix(1, 0, 0, 1, 118.9979, 116.9102)\" opacity=\"1\"><path d=\"M-1.1897,-1.1897 T-0.2036,-2.1852 3.8893,-5.2942 12.0594,-10.4664 21.3102,-15.6473 29.1226,-19.8286 35.6881,-23.4703 40.612,-26.341 44.2542,-28.3608 46.3839,-29.6823 46.8546,-30.2721 A1.5634,1.5634 0 0 1 49.1854,-28.1879 T48.2546,-27.2103 45.8579,-25.5577 42.3128,-23.5013 37.3412,-20.5132 30.7571,-16.7894 22.9881,-12.6127 13.9099,-7.5528 6.0403,-2.663 2.1808,0.2081 1.1897,1.1897 A1.6825,1.6825 0 0 1 -1.1897,-1.1897 Z\" stroke-linecap=\"round\" fill=\"#f2f2f2\"/></g></svg>"
+}

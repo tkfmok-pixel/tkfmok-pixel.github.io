@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "id": "node-0",
+      "x": 0,
+      "y": 0,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W25/2025-06-16.md"
+    },
+    {
+      "id": "node-1",
+      "x": 270,
+      "y": 0,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W25/2025-06-15.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W27/2025-W27.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W26/2025-W26.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W27/2025-W27.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-06.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/07/2025-W28/2025-07-06.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2023/2023-08-13.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2023/2023-10-25.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W26/2025-06-25.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W26/2025-06-26.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W26/2025-06-27.md"
+    },
+    {
+      "id": "node-8",
+      "x": 0,
+      "y": 540,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "01_journal/2025/06/2025-W26/2025-06-28.md"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "node-0",
+      "x": 0,
+      "y": 0,
+      "width": 250,
+      "height": 250,
+      "type": "file",
+      "file": "11_ThinkAboutIt/think_ITコンサルについて考える。.md"
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "version": "1.0-1.0",
+    "frontmatter": {}
+  }
+}

@@ -1,0 +1,91 @@
+/* ===== ライトテーマ ===== */
+.theme-light .site-body {
+  background-image: url("https://i.gyazo.com/d38dbaf90bd292dc08b7de27470f2cbd.png") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-color: rgba(255,255,255,0.85) !important;
+  background-blend-mode: lighten;
+}
+
+/* ===== ダークテーマ ===== */
+.theme-dark .site-body {
+  background-image: url("https://i.gyazo.com/7575b54a5200eb568de82b54d964a605.png") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-color: rgba(0,0,0,0.7) !important;
+  background-blend-mode: darken;
+}
+
+/* ライトモード */
+.theme-light .site-sidebar {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+    url("https://fromtheasia.com/wp-content/uploads/NCG369-scaled.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ダークモード */
+.theme-dark .site-sidebar {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://fromtheasia.com/wp-content/uploads/NCG369-scaled.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* -------------------------
+   ライトモード用
+------------------------- */
+.theme-light {
+  /* ファイル名タイトル */
+  .site-body .publish-title {
+    color: #2c3e50 !important;
+  }
+
+  /* 見出し1 */
+  .markdown-preview-view h1 {
+    color: #2980b9 !important;
+  }
+
+  /* 見出し2 */
+  .markdown-preview-view h2 {
+    color: #27ae60 !important;
+  }
+
+  /* 見出し3 */
+  .markdown-preview-view h3 {
+    color: #8e44ad !important;
+  }
+}
+
+/* -------------------------
+   ダークモード用
+------------------------- */
+.theme-dark {
+  /* ファイル名タイトル */
+  .site-body .publish-title {
+    color: #ecf0f1 !important;
+  }
+
+  /* 見出し1 */
+  .markdown-preview-view h1 {
+    color: #3498db !important;
+  }
+
+  /* 見出し2 */
+  .markdown-preview-view h2 {
+    color: #2ecc71 !important;
+  }
+
+  /* 見出し3 */
+  .markdown-preview-view h3 {
+    color: #9b59b6 !important;
+  }
+}
