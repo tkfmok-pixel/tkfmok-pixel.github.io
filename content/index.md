@@ -12,8 +12,14 @@
 ささやかな記録
 
 # 📚Pages📚
-```dataview
-LIST
+<!-- QueryToSerialize: LIST
 FROM "publish"
-WHERE file.name != "index"
-```
+WHERE file.name != "index"  -->
+<!-- SerializedQuery: LIST FROM "publish" WHERE file.name != "index" -->
+- [[QuartzとGitHub Pagesで公開するまで。]]
+- [[朝晩のコーチ用スクリプト]]
+- [[生成AIに朝晩のメンタルコーチになってもらう。]]
+- [[HOMEBRIDGEサーバ化]]
+- [[MacMiniをサーバーにする]]
+
+<!-- SerializedQuery END -->
