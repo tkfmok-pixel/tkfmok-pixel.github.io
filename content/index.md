@@ -12,4 +12,8 @@
 ささやかな記録
 
 # 📚Pages📚
-随時更新していくつもり...
+```dataview
+LIST
+FROM "publish"
+WHERE file.name != "index"
+```
