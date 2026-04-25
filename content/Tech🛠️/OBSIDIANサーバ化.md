@@ -1,4 +1,3 @@
-https://gemini.google.com/share/141d1e1d8128
 
 現在のシステムは、**「情報の集約・バックアップ（Vault）」**と**「情報の公開（Quartz）」**の2段階構造になっています。
 
