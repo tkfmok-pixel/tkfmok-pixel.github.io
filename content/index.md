@@ -19,11 +19,16 @@ WHERE file.name != "index"
 GROUP BY file.folder
 -->
 <!-- SerializedQuery: LIST rows.file.link FROM "publish" WHERE file.name != "index" GROUP BY file.folder -->
+- publish/Study✏️: 
+    - [[通信制大学の受講計画の立案と進捗管理を考える]]
+    - [[大学の受講計画の立案と進捗管理をOBSIDIANで実現する]]
+
 - publish/Tech🛠️: 
     - [[HOMEBRIDGEサーバ化]]
     - [[MacMiniをサーバーにする]]
-    - [[OBSIDIANサーバ化]]
     - [[QuartzとGitHub Pagesで公開するまで。]]
+    - [[サイドバーをTwitterみたいにしたい]]
+    - [[OBSIDIANサーバ化]]
 
 - publish/Weekly🐱: 
     - [[Weekly🐱2026W17]]
