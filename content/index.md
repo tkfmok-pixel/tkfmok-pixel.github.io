@@ -35,27 +35,27 @@ GROUP BY file.folder
 -->
 <!-- SerializedQuery: LIST rows.file.link FROM "publish" WHERE file.name != "index" GROUP BY file.folder -->
 - publish/Study✏️: 
-    - [[大学の受講計画の立案と進捗管理をOBSIDIANで実現する]]
     - [[通信制大学の受講計画の立案と進捗管理を考える]]
+    - [[大学の受講計画の立案と進捗管理をOBSIDIANで実現する]]
 
 - publish/Tech🛠️: 
-    - [[HOMEBRIDGE]]
     - [[HOMEBRIDGEサーバ化]]
-    - [[MacMiniをサーバーにする]]
-    - [[OBSIDIANサーバ化]]
+    - [[HOMEBRIDGE]]
     - [[QuartzとGitHub Pagesで公開するまで。]]
-    - [[サイドバーをTwitterみたいにしたい]]
     - [[ボタンひとつで、ローカルAIが「今日書く記事」を下書きしてくれる仕組みを作った]]
     - [[溜まり続けるノートのタグ付けを、AIに毎晩やってもらうことにした]]
+    - [[MacMiniをサーバーにする]]
     - [[自分専属のAIカウンセラーを作りたい]]
+    - [[サイドバーをTwitterみたいにしたい]]
+    - [[OBSIDIANサーバ化]]
 
 - publish/Weekly🐱: 
     - [[Weekly🐱2026W17]]
     - [[Weekly🐱2026W23]]
 
 - publish/WellBeing🧘: 
-    - [[wellbeing_analysis]]
     - [[余剰エネルギーの逆説_高すぎる朝はいい夜にならない]]
+    - [[wellbeing_analysis]]
 
 
 <!-- SerializedQuery END -->
