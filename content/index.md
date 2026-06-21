@@ -12,6 +12,7 @@ tags:
   - 日常のメモ
   - 技術的興味
   - 彷徨う日々
+summary: "publish/Study✏️: publish/Weekly🐱: publish/Tech🛠️: ボタンひとつで、ローカルAIが「今日書く記事」を下書きしてくれる仕組みを作った publish/WellBeing🧘:"
 ---
 # 🐏Introduction🐏
 エンジニアと非エンジニアの間
@@ -35,27 +36,27 @@ GROUP BY file.folder
 -->
 <!-- SerializedQuery: LIST rows.file.link FROM "publish" WHERE file.name != "index" GROUP BY file.folder -->
 - publish/Study✏️: 
-    - [[通信制大学の受講計画の立案と進捗管理を考える]]
     - [[大学の受講計画の立案と進捗管理をOBSIDIANで実現する]]
+    - [[通信制大学の受講計画の立案と進捗管理を考える]]
 
 - publish/Tech🛠️: 
-    - [[HOMEBRIDGEサーバ化]]
     - [[HOMEBRIDGE]]
+    - [[HOMEBRIDGEサーバ化]]
+    - [[MacMiniをサーバーにする]]
+    - [[OBSIDIANサーバ化]]
     - [[QuartzとGitHub Pagesで公開するまで。]]
+    - [[サイドバーをTwitterみたいにしたい]]
     - [[ボタンひとつで、ローカルAIが「今日書く記事」を下書きしてくれる仕組みを作った]]
     - [[溜まり続けるノートのタグ付けを、AIに毎晩やってもらうことにした]]
-    - [[MacMiniをサーバーにする]]
     - [[自分専属のAIカウンセラーを作りたい]]
-    - [[サイドバーをTwitterみたいにしたい]]
-    - [[OBSIDIANサーバ化]]
 
 - publish/Weekly🐱: 
     - [[Weekly🐱2026W17]]
     - [[Weekly🐱2026W23]]
 
 - publish/WellBeing🧘: 
-    - [[余剰エネルギーの逆説_高すぎる朝はいい夜にならない]]
     - [[wellbeing_analysis]]
+    - [[余剰エネルギーの逆説_高すぎる朝はいい夜にならない]]
 
 
 <!-- SerializedQuery END -->

@@ -1,3 +1,16 @@
+---
+tags:
+  - homebridge
+  - macmini
+  - nodejs
+  - iphone
+  - siri
+  - aircon
+  - iot
+  - setup
+summary: "型の古いNatureRemoやKasaがiosのホームアプリに対応していないので、HOMEBRIDGEを使ってホームアプリに対応させて、iphoneから操作できるようにしたい。"
+---
+
 # WHY
 ## 背景・目的
 型の古いNatureRemoやKasaがiosのホームアプリに対応していないので、[[HOMEBRIDGE]]を使ってホームアプリに対応させて、iphoneから操作できるようにしたい。

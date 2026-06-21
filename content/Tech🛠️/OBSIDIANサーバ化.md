@@ -1,3 +1,16 @@
+---
+tags:
+  - Obsidian
+  - Vault
+  - Quartz
+  - GitHub
+  - 同期
+  - バックアップ
+  - 自動化スクリプト
+  - 情報管理システム
+summary: "あなたの全メモ（Vault）をMac mini、GitHub、MacBook Air、iPhoneの間で最新に保つための仕組みです。 Pull: GitHub（iPhoneやMBAで書いた最新分）をMac miniに取り込む。"
+---
+
 
 現在のシステムは、**「情報の集約・バックアップ（Vault）」**と**「情報の公開（Quartz）」**の2段階構造になっています。
 
