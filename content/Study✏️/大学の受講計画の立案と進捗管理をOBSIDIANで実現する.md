@@ -1,5 +1,17 @@
 ---
 tags:
+  - databox
+  - dataviewjs
+  - 進捗管理
+  - 学習計画
+  - タスク管理
+  - OBSIDIAN
+  - 生成AI
+  - シラバス
+
+---
+---
+tags:
   - ダタボーン
   - dataviewjs
   - 進捗管理
@@ -302,3 +314,7 @@ if (todaysTasks.length > 0) {
     dv.paragraph("本日の予定はありません。ゆっくり休みましょう！☕");
 }
 ```
+
+## 関連ノート
+- [[進捗率]]
+- [[データサイエンティストお仕事図鑑]]

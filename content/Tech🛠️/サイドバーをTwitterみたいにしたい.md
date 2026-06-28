@@ -8,6 +8,18 @@ tags:
   - Tweet投稿
   - DailyNote
   - カスタマイズ
+
+---
+---
+tags:
+  - Obsidian
+  - CSSスタイル
+  - Twitter風UI
+  - QuickAddプラグイン
+  - Commanderプラグイン
+  - Tweet投稿
+  - DailyNote
+  - カスタマイズ
 summary: "とにかくTwitterみたいに気軽に投げて気軽に振り返る作業を自分だけの世界でやりたいんじゃ！ Obsidianでちょっと思ったことを書くのは意外と難しくないですか。 ということで、CSSでなんとかできないかとGEMINIに聞いてみた。"
 ---
 
@@ -132,3 +144,8 @@ Tabbarにquickaddのコマンドを登録するだけ。
 
 # 完了
 以上です。
+
+## 関連ノート
+- [[PKM現状分析_2026-06-07]]
+- [[【第3講】ノートとその問題点]]
+- [[情報セキュリティⅡ]]
