@@ -1,81 +1,188 @@
 @use "./base.scss";
 
 /* =================================================================
-   Obsidian風 Cardy テーマ風カスタム
-   Quartz の閲覧ビューのみを装飾する
+   Obsidian 再現テーマ:  Cyberpunk(ネオン) + Glassmorphism(ガラス)
+   ----------------------------------------------------------------
+   実際の Obsidian 環境:
+     - テーマ:     AnuPpuccin
+     - スニペット: cyberpunk.css / glassmorphism.css
+     - フォント:   BM Hanna Pro (Web では和文フォントで代替)
+   このファイルは Quartz の閲覧ビューにその見た目を移植する。
+   Quartz のモード切替は :root[saved-theme="light|dark"]。
    ================================================================= */
 
-/* 1. テーマ用カスタム変数 ----------------------------------------- */
+/* 1. 変数 --------------------------------------------------------- */
 
 :root {
+  /* フォント: 見出し/コードはモノスペース、本文は和文ゴシック */
+  --mono-override: "JetBrains Mono", "Fira Code", "IBM Plex Mono", ui-monospace,
+    monospace;
   --font-text-override: "Hiragino Maru Gothic ProN", "BIZ UDPGothic", system-ui,
     -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* light */
-  --cardy-bg-editor: #f0f0f2;
-  --cardy-bg-line: #ffffff;
-  --cardy-line-border: #d1d1d6;
-  --cardy-preview-bg: #ffffff;
-  --cardy-h1-color: #5d576b;
-  --cardy-h1-bg: #e8e6f0;
-  --cardy-h2-color: #4a6fa5;
-  --cardy-h2-bg: #e3effa;
-  --cardy-h3-color: #557b66;
-  --cardy-h3-bg: #ebf5e9;
-  --cardy-accent-edit: #ffaa00;
+  /* --- ライトモード (cyberpunk.css の .theme-light に対応) --- */
+  --neon: #5e00b5;
+  --neon-dim: rgba(94, 0, 181, 0.12);
+  --neon-glow: 0 0 4px rgba(94, 0, 181, 0.3);
+  --h1: #5e00b5;
+  --h2: #006d8f;
+  --h3: #7b2cbf;
+  --h4: #c2185b;
+  --h5: #a8600a;
+  --h6: #555555;
+
+  /* ガラス (glassmorphism.css の .theme-light に対応) */
+  --glass-blur: 14px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.45);
+  --glass-panel: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(244, 247, 255, 0.5) 45%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  --glass-shadow:
+    0 10px 28px rgba(60, 40, 120, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 3px 6px -3px rgba(255, 255, 255, 0.9);
+  --glass-sheen: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(210, 225, 255, 0.18) 9%,
+    transparent 24%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.14) 72%,
+    transparent 82%
+  );
 }
 
-/* Quartz のダークモードは :root[saved-theme="dark"] で切り替わる */
+/* --- ダークモード (cyberpunk.css の body + glass の .theme-dark) --- */
 :root[saved-theme="dark"] {
-  --cardy-bg-editor: #0f0f0f;
-  --cardy-bg-line: #1e1e1e;
-  --cardy-line-border: #333333;
-  --cardy-preview-bg: #262626;
-  --cardy-h1-color: #b1a7c7;
-  --cardy-h1-bg: #3e3a49;
-  --cardy-h2-color: #8fb1e0;
-  --cardy-h2-bg: #2a3a4d;
-  --cardy-h3-color: #92b8a3;
-  --cardy-h3-bg: #2d3d34;
-  --cardy-accent-edit: #e5a50a;
+  --neon: #00ff9f;
+  --neon-dim: rgba(0, 255, 159, 0.12);
+  --neon-glow: 0 0 8px #00ff9f, 0 0 20px rgba(0, 255, 159, 0.35);
+  --h1: #00ff9f; /* グリーン */
+  --h2: #00e5ff; /* シアン   */
+  --h3: #c77dff; /* パープル */
+  --h4: #ff6ec7; /* ピンク   */
+  --h5: #ffd166; /* アンバー */
+  --h6: #8b95a1; /* グレー   */
+
+  --glass-blur: 16px;
+  --glass-border: 1px solid rgba(170, 205, 255, 0.18);
+  --glass-panel: linear-gradient(
+    135deg,
+    rgba(40, 42, 60, 0.55) 0%,
+    rgba(30, 32, 46, 0.5) 45%,
+    rgba(35, 37, 52, 0.53) 100%
+  );
+  --glass-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(170, 205, 255, 0.18),
+    inset 0 1px 0 rgba(220, 235, 255, 0.65),
+    inset 0 3px 6px -3px rgba(190, 215, 255, 0.45);
+  --glass-sheen: linear-gradient(
+    155deg,
+    rgba(160, 205, 255, 0.22) 0%,
+    rgba(180, 170, 255, 0.06) 9%,
+    transparent 22%
+  );
 }
 
-/* 本文全体の背景とフォント ----------------------------------------- */
+/* 2. 背景シーン -------------------------------------------------- */
+/*    ガラスがぼかす対象。Obsidian では半透明ウィンドウ越しの壁紙だが
+      Web ではネオン光が滲む暗いグラデーションを背後に敷く            */
 
 body {
   font-family: var(--font-text-override);
-  background-color: var(--cardy-bg-editor);
-  background-image: radial-gradient(var(--cardy-line-border) 0.5px, transparent 0.5px);
-  background-size: 24px 24px;
+  background-color: #eef0f7;
+  background-image:
+    radial-gradient(circle at 15% 18%, rgba(94, 0, 181, 0.1), transparent 42%),
+    radial-gradient(circle at 85% 12%, rgba(0, 109, 143, 0.1), transparent 42%),
+    radial-gradient(circle at 50% 95%, rgba(123, 44, 191, 0.08), transparent 48%),
+    linear-gradient(180deg, #f3f1fb 0%, #e7ecf7 100%);
+  background-attachment: fixed;
 }
 
-/* Quartz の中央カラム (= Obsidian のプレビュー相当) --------------- */
+:root[saved-theme="dark"] body {
+  background-color: #11111b;
+  background-image:
+    radial-gradient(circle at 15% 18%, rgba(0, 255, 159, 0.12), transparent 42%),
+    radial-gradient(circle at 85% 12%, rgba(0, 229, 255, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 95%, rgba(199, 125, 255, 0.12), transparent 48%),
+    linear-gradient(180deg, #11111b 0%, #181826 100%);
+  background-attachment: fixed;
+}
+
+/* 3. ガラスの本文カード ------------------------------------------ */
 
 .page > #quartz-body > .center {
-  /* 背景グリッドは body に任せるのでここでは透明 */
   background: transparent;
 }
 
-/* 浮遊パネル風の本文カード */
 .page > #quartz-body > .center > article {
-  background-color: var(--cardy-preview-bg);
-  box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.18),
-    0 36px 72px rgba(0, 0, 0, 0.14);
-  border-radius: 12px;
-  padding: 40px 12% 80px 12%;
+  position: relative;
+  background: var(--glass-panel);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(125%) brightness(1.1);
+  backdrop-filter: blur(var(--glass-blur)) saturate(125%) brightness(1.1);
+  border: var(--glass-border);
+  border-radius: 0; /* glassmorphism.css 同様に四角 */
+  box-shadow: var(--glass-shadow);
+  padding: 44px 9% 80px 9%;
   max-width: 900px;
   margin: 40px auto 80px auto;
   line-height: 1.9;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* 段落間の余白を少し広げて読みやすくする */
+/* 上部のガラス光沢 */
+.page > #quartz-body > .center > article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--glass-sheen);
+}
+
+/* 瞬く光点(スパークル) */
+.page > #quartz-body > .center > article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(circle 2px at 18% 14%, #ffffff, transparent 60%),
+    radial-gradient(circle 1.5px at 68% 9%, #d8ecff, transparent 60%),
+    radial-gradient(circle 2px at 40% 80%, #ffffff, transparent 60%),
+    radial-gradient(circle 1.5px at 88% 64%, #e6d8ff, transparent 60%),
+    radial-gradient(circle 1.5px at 8% 70%, #ffffff, transparent 60%);
+  animation: glass-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes glass-twinkle {
+  0%, 100% { opacity: 0.1; }
+  50%      { opacity: 0.85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page > #quartz-body > .center > article::after { animation: none !important; }
+}
+
+/* 本文要素はガラス層より前面に */
+.page > #quartz-body > .center > article > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 段落間の余白 */
 .page > #quartz-body > .center > article p + p {
   margin-top: 0.8em;
 }
 
-/* hr とフッターもカード幅に揃えて中央寄せ */
+/* hr / フッターもカード幅に揃える */
 .page > #quartz-body > .center > hr,
 .page > #quartz-body > .center > .page-footer {
   max-width: 900px;
@@ -83,22 +190,19 @@ body {
   margin-right: auto;
 }
 
-/* 見出しスタイル -------------------------------------------------- */
+/* 4. 見出し: cyberpunk ネオン ------------------------------------ */
 
-.page > #quartz-body > .center > article h1,
-.page > #quartz-body > .center > article h2,
-.page > #quartz-body > .center > article h3 {
-  text-align: center;
+.page > #quartz-body > .center > article :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--mono-override);
+  text-align: left;
   border: none;
   margin-top: 2em;
-  margin-bottom: 1.1em;
+  margin-bottom: 0.9em;
   position: relative;
 }
 
-/* Quartz の見出しアンカーが非表示でも幅を取ってしまうのを防ぐ */
-.page > #quartz-body > .center > article h1[id] > a[href^="#"],
-.page > #quartz-body > .center > article h2[id] > a[href^="#"],
-.page > #quartz-body > .center > article h3[id] > a[href^="#"] {
+/* Quartz の見出しアンカーが幅を取らないように */
+.page > #quartz-body > .center > article :is(h1, h2, h3) > a[href^="#"] {
   position: absolute;
   right: 0.4rem;
   top: 50%;
@@ -107,107 +211,190 @@ body {
 }
 
 .page > #quartz-body > .center > article h1:first-of-type {
-  margin-top: 20px;
+  margin-top: 0.4em;
 }
 
 .page > #quartz-body > .center > article h1 {
-  font-size: 1.75em;
-  color: var(--cardy-h1-color);
-  position: relative;
-  padding: 0.25em 0 0.55em;
-  background-color: var(--cardy-h1-bg);
-  border-radius: 8px;
-}
-
-.page > #quartz-body > .center > article h1::after {
-  content: "◈";
-  display: block;
-  font-size: 0.42em;
-  color: var(--cardy-accent-edit);
-  margin-top: 6px;
-  background: linear-gradient(to right, transparent, var(--cardy-h1-color), transparent);
-  background-size: 52% 1px;
-  background-repeat: no-repeat;
-  background-position: center;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-left: 3px solid var(--h1);
+  padding-left: 0.75em;
+  color: var(--h1);
+  text-shadow: 0 0 8px var(--h1), 0 0 20px var(--h1);
 }
 
 .page > #quartz-body > .center > article h2 {
-  font-size: 1.5em;
-  color: var(--cardy-h2-color);
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 28px 7px 28px;
-  border-bottom: 0.5px solid color-mix(in srgb, var(--cardy-h2-color) 28%, transparent);
-  background-color: var(--cardy-h2-bg);
-  border-radius: 14px;
+  font-size: 1.45em;
+  letter-spacing: 0.06em;
+  border-left: 2px solid var(--h2);
+  padding-left: 0.6em;
+  color: var(--h2);
+  text-shadow: 0 0 6px var(--h2);
 }
 
 .page > #quartz-body > .center > article h3 {
-  font-size: 1.2em;
-  color: var(--cardy-h3-color);
-  display: inline-block;
-  padding: 4px 14px;
-  background-color: var(--cardy-h3-bg);
-  border: 0.5px solid color-mix(in srgb, var(--cardy-h3-color) 28%, transparent);
-  border-radius: 12px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.22em;
+  border-left: 1px solid var(--h3);
+  padding-left: 0.5em;
+  color: var(--h3);
+  text-shadow: 0 0 5px var(--h3);
 }
 
-/* 画像をポラロイド風に -------------------------------------------- */
+.page > #quartz-body > .center > article h4 {
+  font-size: 1.1em;
+  border-left: 1px solid var(--h4);
+  padding-left: 0.5em;
+  color: var(--h4);
+  text-shadow: 0 0 4px var(--h4);
+}
+
+.page > #quartz-body > .center > article h5 {
+  border-left: 1px solid var(--h5);
+  padding-left: 0.5em;
+  color: var(--h5);
+  text-shadow: 0 0 3px var(--h5);
+}
+
+.page > #quartz-body > .center > article h6 {
+  border-left: 1px solid var(--h6);
+  padding-left: 0.5em;
+  color: var(--h6);
+}
+
+/* ライトモードは光彩を抑えて輪郭をはっきり */
+:root[saved-theme="light"] .page > #quartz-body > .center > article h1 {
+  text-shadow: 0 0 2px rgba(94, 0, 181, 0.25);
+}
+:root[saved-theme="light"]
+  .page
+  > #quartz-body
+  > .center
+  > article
+  :is(h2, h3, h4, h5) {
+  text-shadow: none;
+}
+
+/* 5. リンク: ネオン ---------------------------------------------- */
+
+.page > #quartz-body > .center > article a {
+  color: var(--neon) !important;
+  text-decoration: none;
+  transition: text-shadow 0.2s ease;
+}
+.page > #quartz-body > .center > article a:hover {
+  text-shadow: var(--neon-glow);
+}
+
+/* 6. コード / コードブロック ------------------------------------- */
+
+.page > #quartz-body > .center > article :not(pre) > code {
+  font-family: var(--mono-override) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(0, 255, 159, 0.3) !important;
+  border-radius: 4px !important;
+  color: var(--neon) !important;
+  padding: 0.1em 0.4em !important;
+}
+:root[saved-theme="light"]
+  .page
+  > #quartz-body
+  > .center
+  > article
+  :not(pre)
+  > code {
+  background: rgba(94, 0, 181, 0.06) !important;
+  border-color: rgba(94, 0, 181, 0.3) !important;
+}
+
+.page > #quartz-body > .center > article pre {
+  font-family: var(--mono-override) !important;
+  border-left: 3px solid var(--neon) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 12px rgba(0, 255, 159, 0.08);
+}
+:root[saved-theme="light"] .page > #quartz-body > .center > article pre {
+  background: rgba(20, 18, 32, 0.92) !important;
+}
+.page > #quartz-body > .center > article pre > code {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+/* 7. 引用 -------------------------------------------------------- */
+
+.page > #quartz-body > .center > article blockquote {
+  border-left: 3px solid var(--neon) !important;
+  background: var(--neon-dim) !important;
+  border-radius: 0 4px 4px 0 !important;
+  padding: 0.4em 1em !important;
+}
+
+/* 8. タグ -------------------------------------------------------- */
+
+.page > #quartz-body > .center > article a.tag-link,
+.page .tag-link {
+  background: rgba(0, 255, 159, 0.08) !important;
+  border: 1px solid rgba(0, 255, 159, 0.4) !important;
+  border-radius: 12px !important;
+  color: var(--neon) !important;
+  padding: 1px 8px !important;
+  font-size: 0.82em !important;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.page > #quartz-body > .center > article a.tag-link:hover,
+.page .tag-link:hover {
+  background: rgba(0, 255, 159, 0.18) !important;
+  box-shadow: 0 0 8px rgba(0, 255, 159, 0.3);
+}
+:root[saved-theme="light"]
+  :is(.page > #quartz-body > .center > article a.tag-link, .page .tag-link) {
+  background: rgba(94, 0, 181, 0.08) !important;
+  border-color: rgba(94, 0, 181, 0.4) !important;
+}
+
+/* 9. 画像: ガラス枠 ---------------------------------------------- */
 
 .page > #quartz-body > .center > article img {
   display: block;
   margin: 2em auto;
-  border: 12px solid #fff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  transform: rotate(-1deg);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  border-radius: 0; /* ポラロイド感を出す */
+  border-radius: 4px;
+  border: var(--glass-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 255, 159, 0.15);
 }
 
-:root[saved-theme="dark"] .page > #quartz-body > .center > article img {
-  border-color: #2d2d2d;
+/* 10. スクロールバー / 選択 -------------------------------------- */
+
+.page > #quartz-body > .center ::-webkit-scrollbar { width: 6px; height: 6px; }
+.page > #quartz-body > .center ::-webkit-scrollbar-track { background: transparent; }
+.page > #quartz-body > .center ::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 159, 0.35);
+  border-radius: 4px;
+}
+.page > #quartz-body > .center ::-webkit-scrollbar-thumb:hover {
+  background: var(--neon);
+}
+::selection {
+  background: color-mix(in srgb, var(--neon) 28%, transparent) !important;
 }
 
-.page > #quartz-body > .center > article img:hover {
-  transform: rotate(0deg) scale(1.03);
+/* 11. サイドバーもガラス化 -------------------------------------- */
+
+.page .sidebar {
+  background: var(--glass-panel);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(120%);
 }
-
-/* 上部固定バナー画像は使用しない（余白のみベースレイアウトに任せる） */
-
-/* モバイル最適化 -------------------------------------------------- */
-
-@media (max-width: 768px) {
-  .page > #quartz-body > .center > article {
-    padding: 32px 16px 60px 16px;
-    margin: 16px auto 48px auto;
-    box-shadow: none;
-    border-radius: 0;
-    max-width: 100%;
-  }
-
-  .page > #quartz-body > .center > article img {
-    transform: none !important;
-    width: 100% !important;
-    margin: 20px auto !important;
-  }
-
-  /* 追加の上部余白は不要 */
-}
-
-/* =================================================================
-   左サイドバー（ノート一覧）を読みやすくする
-   ================================================================= */
 
 .page .sidebar.left .explorer-content ul li > a,
 .page .sidebar.left .recent-notes ul.recent-ul li .section .desc h3 a.internal {
-  opacity: 0.98;
-  color: var(--dark);
+  color: var(--darkgray);
   display: block;
   padding: 0.35rem 0.55rem;
-  border-radius: 10px;
+  border-radius: 8px;
   line-height: 1.35;
   font-size: 0.98rem;
   transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
@@ -216,40 +403,29 @@ body {
 .page .sidebar.left .explorer-content ul li > a:hover,
 .page .sidebar.left .recent-notes ul.recent-ul li .section .desc h3 a.internal:hover {
   background-color: color-mix(in srgb, var(--highlight) 70%, transparent);
+  color: var(--neon);
 }
 
 .page .sidebar.left .explorer-content ul li > a.active {
-  opacity: 1;
-  color: var(--tertiary);
-  background-color: color-mix(in srgb, var(--tertiary) 18%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tertiary) 40%, transparent);
+  color: var(--neon);
+  background-color: color-mix(in srgb, var(--neon) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--neon) 40%, transparent);
 }
 
-.page .sidebar.left .recent-notes > h3 {
-  font-size: 0.98rem;
-  margin: 0.6rem 0 0 0;
+/* 12. モバイル最適化 -------------------------------------------- */
+
+@media (max-width: 768px) {
+  .page > #quartz-body > .center > article {
+    padding: 28px 18px 56px 18px;
+    margin: 14px auto 40px auto;
+    /* モバイルは負荷軽減のためぼかしを弱める */
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    backdrop-filter: blur(6px) saturate(120%);
+    max-width: 100%;
+  }
+  .page > #quartz-body > .center > article::after { animation: none; }
+  .page > #quartz-body > .center > article img {
+    width: 100% !important;
+    margin: 20px auto !important;
+  }
 }
-
-.page .sidebar.left .recent-notes ul.recent-ul {
-  margin-top: 0.6rem;
-}
-
-.page .sidebar.left .recent-notes ul.recent-ul > li {
-  margin: 0.75rem 0;
-}
-
-.page .sidebar.left .recent-notes .section > .meta {
-  opacity: 0.85;
-  margin: 0 0 0.25rem 0;
-  font-size: 0.85rem;
-}
-
-.page .sidebar.left .recent-notes .tags a.internal {
-  display: inline-block;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  opacity: 0.95;
-  font-size: 0.82rem;
-}
-
-
