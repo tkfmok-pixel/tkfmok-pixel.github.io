@@ -8,18 +8,6 @@ tags:
   - Tweet投稿
   - DailyNote
   - カスタマイズ
-
----
----
-tags:
-  - Obsidian
-  - CSSスタイル
-  - Twitter風UI
-  - QuickAddプラグイン
-  - Commanderプラグイン
-  - Tweet投稿
-  - DailyNote
-  - カスタマイズ
 summary: "とにかくTwitterみたいに気軽に投げて気軽に振り返る作業を自分だけの世界でやりたいんじゃ！ Obsidianでちょっと思ったことを書くのは意外と難しくないですか。 ということで、CSSでなんとかできないかとGEMINIに聞いてみた。"
 ---
 

@@ -8,18 +8,6 @@ tags:
   - aircon
   - iot
   - setup
-
----
----
-tags:
-  - homebridge
-  - macmini
-  - nodejs
-  - iphone
-  - siri
-  - aircon
-  - iot
-  - setup
 summary: "型の古いNatureRemoやKasaがiosのホームアプリに対応していないので、HOMEBRIDGEを使ってホームアプリに対応させて、iphoneから操作できるようにしたい。"
 ---
 
